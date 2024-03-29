@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Interactive Arithmetic Quiz">
+    <meta name="keywords"
+        content=" quiz, online quiz, mental maths, learn, interactive, fun, arithmetic quiz, challenging, multiple choice,">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Mental Arithmetic Quiz</title>
+    <!-- Logo link -->
+    <link href="/favicon.ico" rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <!-- START Of QUIZ -->
+    <div class="header-icon">
+        <!-- <div class="social-icon">
+            <a href="https://github.com/Shida18719" target="_blank" rel="noopener"
+                aria-label="visit my Face book page (opens in a new tab)">
+                <i class="fab fa-github"></i></a>
+
+            <a href="https://www.linkedin.com/in/rashidat-adekoya-668843245/" target="_blank" rel="noopener"
+                aria-label="visit my Face book page (opens in a new tab)">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div> -->
+        <div id="progress-bar">
+            <div id="progressBar-vol"></div>
+        </div>
+    </div>
+
+    <div class="start-quiz-home home-box" id="start-quiz-home">
+        <header>
+
+            <h1 class="heading">
+                <img class="logo" src="/images/mental_logo.webp" alt="logo"> Mental Arithmetic Quiz
+            </h1>
+        </header>
+        <div>
+            <p class="quiz-intro-txt">How quick can you solve the questions?</p>
+        </div>
+
+        <!-- User name input area -->
+        <div class="user-input-area">
+            <label for="user-name-input"></label>
+            <input type="text" id="user-name-input" name="user-name" placeholder="Please Enter Your Name" maxlength="8"
+                aria-label="user-name-input" required>
+
+            <!-- Error Message for Username Validation -->
+            <div id="error" class="error-msg" aria-live="assertive">
+            </div>
+
+            <!-- Proceed button to Quiz Rules -->
+            <div class="initiate-quiz-btn">
+                <button id="next-btn" data-type="next" class="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Rule Box Section-->
+    <section class="rule-box hide" id="rule-box">
+        <div class="rule-box-wrapper">
+            <h2 class="rule-title"> Quiz Rules</h2>
+            <div class="instructions">
+                <div class="rule">1. The game consists of level one to three, with an increase level of difficulty.
+                </div>
+                <div class="rule">2. The questions are mixture of addition, subtraction, multiplication and
+                    division.
+                </div>
+                <div class="rule">3. There are <span class="total-question">5</span> questions per level.</div>
+                <div class="rule">4. You have <span>20</span> seconds per question.</div>
+                <div class="rule">5. Enter your answer for each question.</div>
+                <div class="rule">6. You'll get points on every correct answer.</div>
+                <div class="rule">7. No calculator allowed.</div>
+                <div class="rule">8. Click next to move on to the next question.</div>
+            </div>
+
+            <!-- Quiz Rule Box Buttons-->
+            <div class="start-buttons-container">
+                <button data-type="start" class="start-quiz-btn" id="start-quiz-btn">Start Quiz</button>
+                <button data-type="home" class="home-btn" id="back-home-btn">Home</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Select Level of Difficulty Section-->
+    <section id="selection-area" class="selection-area hide">
+        <div class="header-icon">
+            <div class="user-icon" aria-hidden="true" style="display: block;">
+                <i class="far fa-user"></i>
+                <div class="player-name"></div>
+            </div>
+        </div>
+        <h2 class="select-quiz">Select Quiz Level</h2>
+        <div class="level-button">
+            <button data-type="difficulty-level1" class="difficulty button" id="difficulty-level1"
+                aria-label="Difficulty Level">Level
+                1</button>
+            <button data-type="difficulty-level2" class="difficulty button" id="difficulty-level2"
+                aria-label="Difficulty Level">Level
+                2</button>
+            <button data-type="difficulty-level3" class="difficulty button" id="difficulty-level3"
+                aria-label="Difficulty Level">Level
+                3</button>
+        </div>
+        <div>
+            <button data-type="home" class="home-btn" id="home-btn">Home</button>
+        </div>
+    </section>
+
+    <!-- Questions Section Area, Questions display with header icons section-->
+    <div class="question-box-area hide" id="question-box-area">
+        <div class="header-icon">
+            <div class="user-icon">
+                <i class="far fa-user" aria-hidden="true"></i>
+                <div id="player-name" class="player-name"></div>
+            </div>
+
+            <div id="time">
+                <div class="timer-icon">
+                    <i class="fas fa-stopwatch" aria-hidden="true" style="display: block;"></i>
+                </div>
+                <div id="time-counter" class="time-counter" style="color: black;">:0</div>
+            </div>
+            <div class="score">
+                <span id="user-score">0</span>
+            </div>
+        </div>
+
+        <div class="show-level">
+            <div id="level">Level 1</div>
+        </div>
+        <div class="questions-counter-container" id="'questions-counter-container">
+            <div class="questions-counter">
+                Question <span id="questions-counter">1</span> of 5
+            </div>
+        </div>
+        <div class="questions-txt" id="questions-txt">
+        </div>
+
+        <div class="option-buttons" id="option-buttons">
+
+            <!-- set onclick attribute to all available options -->
+            <button class="option-btn" id="option1" aria-label="Answer Option Button 1"
+                onclick="optionClick(0)"></button>
+            <button class="option-btn" id="option2" aria-label="Answer Option Button 2"
+                onclick="optionClick(1)"></button>
+            <button class="option-btn" id="option3" aria-label="Answer Option Button 3"
+                onclick="optionClick(2)"></button>
+            <button class="option-btn" id="option4" aria-label="Answer Option Button 4"
+                onclick="optionClick(3)"></button>
+        </div>
+        <div id="correct"></div>
+        <div id="incorrect"></div>
+        <div class="next-question-container">
+            <button data-type="continue" class="next-ques-btn btn--white" id="next-ques-btn">Next
+                Question</button>
+
+            <div id="quiz-end" class="quiz-end"></div>
+            <button data-type="result" class="result-btn" id="result-btn">Result</button>
+        </div>
+    </div>
+
+    <!-- Quiz Result Box Section-->
+    <section class="quiz-result home-box" id="quiz-result">
+        <h2>Quiz Result</h2>
+        <div class="icon" id="icon">
+        </div>
+        <div class="result-text" id="result-text">
+        </div>
+        <div id="reset-quiz" class="reset-quiz">
+            <button type="button" class="replay" id="replay" aria-label="Play Again">Play Again</button>
+            <button type="button" class="save-score-btn" id="save-score-btn" aria-label="Save Score button"
+            onclick="saveHighScore(event)">Save Score</button>
+        </div>
+    </section>
+
+    <section class="h-score" id="h-score">
+        <h2>High Scores</h2>
+        <ul id="high-score-list"></ul>
+        <button data-type="home" class="home-btn" id="homeBtn">Home</button>
+    </section>
+    
+    
+    <footer>
+        &copy; <span id="current-year"></span> <br> Mental Arithmetic Quiz By Rashidat Adekoya.
+        <!-- <p>This site is not intended for commercial use</p> -->
+    </footer>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/2d736759eb.js" crossorigin="anonymous"></script>
+    <script src="/js/questions.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap');
+
+/* --------- Global style */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open sans', sans-serif;
+    color: #595959;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #4E0A6D, #6E1BB1, #844FD8, #A484D8, #7651CC, #7132AD, #A086E9, #722CA0, #450A57);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;   
+}
+
+/* --------- Heading */
+/* ------------------ */
+
+.header-icon .social-icon{
+    color: #FAFAFA;
+    font-size: 1.5rem; 
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 2rem 0 3rem;
+}  
+
+.header-icon .social-icon a>i {
+    margin-left: 3rem;
+    transition: all .3s ease-in-out;
+    color: #FAFAFA; 
+    font-size: 2rem;
+}
+
+.header-icon .social-icon a>i:hover { 
+    transform: translateY(3px);
+    color: #050505;
+    background: #FAFAFA;
+}
+
+.header-icon #progress-bar {
+    width: 13rem;
+    height: 3rem;
+    background-color: #FAFAFA;
+    margin-top: 1.5rem;
+    border: 0.3rem solid #3f13a4;
+    border-radius: 13px;
+}
+
+#progressBar-vol {
+    width: 0%;
+    height: 2.7rem;
+    background-color: #A484D8;
+    border-radius: 9.3px;
+    
+}
+    
+.h-score {
+    display: none;
+    color: #FAFAFA;
+    font-size: 1.2rem; 
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.h-score:hover {
+    transform: scale(1.1);
+}
+
+#high-score-list{
+    list-style: none;
+    justify-content: center; 
+    margin: 3rem auto;
+    color: #FAFAFA;
+    font-size: 1.5rem;
+}
+
+
+.heading {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7rem;
+    width: 100%;
+}
+
+.logo {
+    height: 4.25rem;
+    width: 4.8rem;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-icon {
+    height: 3rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* --------- Start Quiz Home Page layout */
+/* ------------------------------------ */
+
+ .start-quiz-home {
+     display: grid;
+    background-color:#FAFAFA;
+    max-width: 70%; 
+    margin: 5rem auto;
+    width: 70vw;
+    border-style: ridge;
+    border-radius: 10px;
+    align-items: center; 
+    /* display: none;  */
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5); 
+} 
+
+.hide {
+     display: none;   
+}
+
+.quiz-intro-txt {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+.user-input-area {
+    margin-top: 0;
+}
+
+input[type = 'text'] {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 8px;
+    margin: 0.8rem 0 1rem 0;
+    border: 1px solid #3F13A4;
+    text-align: center;
+}
+
+input[type = 'text']:hover, 
+input[type = 'text']:focus {
+    background: rgba(118, 69, 223, 0.168);
+    border: none;
+}
+
+label {
+    font-size: 1.2rem;
+    background: transparent;
+}    
+
+.error-msg {
+    margin-bottom: 1rem;
+    color: #6B35E8;
+}
+
+.initiate-quiz-btn {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 100%; 
+    margin-bottom: 2rem;
+}
+
+.next-btn {
+    width: 10rem;
+    font-size: 1.2rem;
+    height: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #FAFAFA;
+    margin: 0 auto;
+    background-color: #6B35E8;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.next-btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+ /* -------------- Quiz Rule Box*/
+ /* --------------------------- */
+ .rule-box {
+    max-width: 80%;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    /* display: grid; */
+    width: 80vw;   
+    border-style: ridge;
+    margin: 5rem auto;
+    display: none;
+    overflow: auto;
+    overflow-x: hidden;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.rule-title {
+    height: 3rem;
+    padding-top: 0.5em;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #3f13a4;
+    margin-bottom: 0.5rem;
+}
+
+.instructions {
+    margin: 0 1.5rem;
+    text-align: left;
+}
+
+.instructions .rule {
+    margin: 0.3rem 0;
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+}
+
+.rule-box .rule span {
+    font-weight: 600;
+    color: #050505;
+}
+
+/* Quiz Rule Box Buttons */
+.rule-box .start-buttons-cointainer {
+    display: flex;
+    place-content: center;
+    height: 3rem;
+    border-top: 1px solid #595959;
+    color: #FAFAFA;
+    margin-bottom: 1rem;
+    padding: 0 1.5em;
+}
+
+.start-quiz-btn,
+.home-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    background-color: #3F13A4;
+    margin: 0.5rem;
+    color: #3f13a4;
+    color: #FAFAFA;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+.start-quiz-btn:hover,
+.home-btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+/* -------------- Select Level of Difficulty*/
+/* --------------------------------------- */
+.selection-area {
+    display: grid;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    width: 65vw;
+    max-width: 70%;
+    margin: 5rem auto;
+    border-style: ridge;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5); 
+    display: none;
+}
+
+.selection-area .header-icon {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.selection-area .header-icon .user-icon {
+    line-height: 3rem;
+    margin: 0.5rem 2rem 0 0;
+}
+
+.selection-area .player-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    margin-left: 1rem;
+    display: inline-flex;
+}
+
+.select-quiz {
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.3rem;
+}
+
+.level-button {
+    display: grid;
+}
+
+.level-button button {
+    width: 10rem;
+    height: 3rem;
+    color: #FAFAFA;
+    margin: 1rem auto;
+    background-color: #6B35E8;
+    border-radius: 8px; 
+    font-size: 1.3rem;
+    border: none;
+    cursor: pointer;
+}
+.level-button button:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+/* --------------------- Quiz Questions Box Area */
+.question-box-area {
+    display: grid;
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    max-width: 80%;
+    width: 80vw;
+    margin: 5rem auto;
+    border-style: ridge; 
+    display: none;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.question-box-area .header-icon {
+    height: 3rem;
+    display: inline-flex;
+    border-bottom: 1px solid #595959;
+    justify-content: space-around;
+    width: 100%;
+}
+.question-box-area .user-icon {
+    font-size: 1.5rem;
+    margin: 0.8rem 4rem 0 0;
+    color: #050505;  
+}
+
+.question-box-area .player-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: none;
+    display: inline-flex;
+}
+
+#time {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.question-box-area .header-icon .timer-icon {
+    font-size: 1.5rem;
+    height: 1.7rem;
+    background-color: #050505;
+    color: #FAFAFA;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 0.7rem;
+}
+
+ #time .time-counter{
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem 0.5rem;
+    height: 1.7rem;
+    font-weight: bold;
+    display: inline-flex;
+}
+
+.question-box-area .header-icon .score {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1.1rem;
+}
+
+ #user-score {
+    color: #3F13A4;
+ }
+
+ #level {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0.5rem 0 1rem 0;
+ }
+
+ .questions-counter-container {
+    color: #3F13A4;
+    font-weight: 600; 
+    font-size: 1.1rem;
+    margin: 0 1rem 1.5rem 1rem;
+}
+
+ .question-box-area .questions-txt {
+    font-size: 1.2rem;
+    font-weight: 600;  
+}
+ 
+.option-buttons {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.option-btn {
+    background-color: #3f13a4;
+    border: #595959;
+    outline: none;
+    color: #FAFAFA;
+    border-radius: 5px;
+    padding: 0.2em 0.2em;
+    margin-bottom: 2rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+ }
+ 
+ .option-btn:hover {
+     border-color: #050505;
+ }
+
+.next-question-container {
+    border-top: 1px solid #595959;
+    margin-bottom: 1rem;
+    line-height: 1.2rem;
+}
+
+.next-ques-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 8.5rem;
+    height: 3rem;
+    border-radius: 5px;
+    border: none;
+    color: #FAFAFA;
+    background-color: #3F13A4;
+    margin: 0 auto;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.next-ques-btn:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+ .result-btn {
+    font-size: 1.1rem;
+    font-weight: 500;
+    width: 8.5rem;
+     height: 3rem;
+    border-radius: 5px;
+    border: none;
+    display:inline-flex;
+    color: #FAFAFA;
+    background-color: #3F13A4;
+    margin: 0 auto;
+    margin-top: 1rem;
+    cursor: pointer; 
+    display: none; 
+} 
+
+.result-btn:hover{
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+/* ------------------ Quiz Feedback Box */
+.quiz-result {
+    display: flex;
+    align-items: center; 
+    background-color:#FAFAFA;
+    border-radius: 10px;
+    flex-direction: column;
+    display: none;
+    width: 70vw;
+    max-width: 70%;
+    margin: 5rem auto;
+    border-style: ridge;
+    text-align: center;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5); 
+}
+
+.quiz-result h2 {
+    margin-top: 1.5rem;
+    color: #3F13A4;
+}
+
+.quiz-result .icon {
+    font-size: 4rem;
+    color: gold;
+    width: 30px;
+    height: 80px;
+    transition: width 2s, height 2s, transform 2s;
+}
+  
+.quiz-result .icon:hover {
+    width: 80px;
+    height: 120px;
+    transform: rotate(160deg);
+ }
+
+.result-text {
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reset-quiz {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-quiz button {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 7rem;
+    height: 2.5rem;
+    margin: 0 0.5rem;
+    color: #FAFAFA;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #3F13A4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.reset-quiz button:hover {
+    transform: scale(1.1);
+    transition: transform 250ms;
+    box-shadow: 0 3px 15px rgba(67, 41, 139, 0.833);
+}
+
+footer {
+    color: #050505;
+    left: 0;
+    bottom: 0;
+    margin-top: 90px; 
+}
+
+footer p {
+    font-size: small;
+    width: 100%; 
+}
+
+/* --------------- Media Queries */
+
+/* Screens less than 640x */
+
+  @media only screen and (max-width: 640px) {
+
+     .header-icon {
+        margin: 2.5rem 0 5rem;
+    } 
+
+    .logo {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    } 
+
+/* --------- Start Quiz Home Page layout */
+/* ------------------------------------ */
+     .start-quiz-home {
+     margin: 3rem auto;
+     width: 85vw;
+    } 
+
+    .quiz-intro-txt {
+        font-size: 1.1rem;
+    } 
+
+    input[type = 'text'] {
+        width: 10rem;
+        height: 3rem;
+        margin: 0.8rem 0 2rem 0;  
+    } 
+
+     footer {
+        margin-top: 30px;
+    }
+
+     .rule-box {
+        margin-top: 3rem;
+        margin-bottom: 4rem; 
+    } 
+
+    .selection-area {
+        margin: 4rem auto;
+    }
+
+    .question-box-area {
+        margin: 4rem auto;
+        align-items: center;
+    }
+
+    .quiz-result {
+        margin: 10rem auto;
+    } 
+}
+
+    /*----------- Question box user icon */
+
+    @media (max-width: 320px) {
+        .question-box-area .user-icon {
+            display: none;
+        }
+    }
