@@ -1,17 +1,3 @@
-// Use the Fetch API to make a GET request to the /questions endpoint
-// const fetchQuestions = async () => {
-//     try {
-//         const response = await fetch('/questions');
-//         const data = await response.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.log('Error fetching questions', error);
-//     }
-    
-// };
-// fetchQuestions();
-
-
 // Get the HTML Elements by their Tag Name and assigned to variable
 
 // Start Quiz Section
