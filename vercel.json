@@ -4,7 +4,7 @@
 
     "builds": [
       {
-        "src": "server.js",
+        "src": "index.ejs",
         "use": "@vercel/node" 
       }
     ],
